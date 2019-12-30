@@ -43,6 +43,7 @@ public class NoteRepository {
         return allNotes;
     }
 
+    //Insert note
     private static class InsertNoteAsyncTask extends AsyncTask<Note, Void, Void> {
         NoteDao noteDao;
 
@@ -57,6 +58,7 @@ public class NoteRepository {
         }
     }
 
+    //Update note
     private static class UpdateNoteAsyncTask extends AsyncTask<Note, Void, Void> {
         NoteDao noteDao;
 
@@ -71,6 +73,7 @@ public class NoteRepository {
         }
     }
 
+    //Delete specific note
     private static class DeleteNoteAsyncTask extends AsyncTask<Note, Void, Void> {
         NoteDao noteDao;
 
@@ -85,6 +88,7 @@ public class NoteRepository {
         }
     }
 
+    //Delete all notes
     private static class DeleteAllNotesAsyncTask extends AsyncTask<Void, Void, Void> {
         NoteDao noteDao;
 
@@ -94,6 +98,7 @@ public class NoteRepository {
 
         @Override
         protected Void doInBackground(Void... voids) {
+            noteDao.deleteAllNotes();
             return null;
         }
     }
